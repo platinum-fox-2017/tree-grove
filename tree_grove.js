@@ -23,7 +23,10 @@ class TreeGrove {
     
     nextYear(){
         for (var i = 0; i < this._treeList.length; i++) {
+            let random = Math.floor(Math.random() * this._treeList[i].age)
             this._treeList[i].grow()
+            this._treeList[i].fruit = random
+            // console.log (this._treeList[i].fruit)
           }
     }
 
@@ -46,18 +49,18 @@ class TreeGrove {
     matureTrees(){
         console.log('\nPohon yang sedang berbuah :')
         for (let i = 0; i < this._treeList.length; i++) {
-            if ((this._treeList[i]._age +  this._treeList[i]._height) <= this._treeList[i]._mature ) {
-              console.log(`${this._treeList[i]._name} sedang berbuah`);
+            if (this._treeList[i].fruit > 0 && this._treeList[i].healthy !== false) {
+              console.log(`${this._treeList[i].name} sedang berbuah`);
             }
-        }
+          }
     }
 
     // Method yang akan me-return nama-nama pohon yang mati di taman tersebut
     deadTrees(){
         console.log('\nPohon yang telah mati :')
         for (let i = 0; i < this._treeList.length; i++) {
-            if ((this._treeList[i]._age +  this._treeList[i]._height) >= this._treeList[i]._mature ) {
-              console.log(`${this._treeList[i]._name} telah mati`);
+            if (this._treeList[i].healthy === false) {
+              console.log(`${this._treeList[i].name} telah mati`);
             }
         }
     }
@@ -71,7 +74,7 @@ var grove = new TreeGrove()
 // parameter ke-4: umur mature pohon tersebut
 // parameter ke-5: healthyStatus dari pohon tersebut ketika ditanam
 grove.inputTree("MangoTree", 3, 1.8, 7,true)
-grove.inputTree("MangoTree", 5, 2.4, 12,true)
+grove.inputTree("MangoTree", 5, 2.4, 12,false)
 grove.inputTree("AppleTree", 4, 1.2, 5,true)
 grove.inputTree("PearTree", 7, 2, 15,true)
 
