@@ -9,19 +9,17 @@ class TreeGrove {
 
     inputTree(name, age, height, matureAge, healthyStatus) {
         // Menerima inputan pohon (jenis dan umur)
-        let treeObject = new Object();
         switch (name) {
             case 'MangoTree':
-                treeObject = new MangoTree(age,height,matureAge,healthyStatus);
+                this._treeArr.push(new MangoTree(age,height,matureAge,healthyStatus));
                 break;
             case 'AppleTree':
-                treeObject = new AppleTree(age,height,matureAge,healthyStatus);
+                this._treeArr.push(new AppleTree(age,height,matureAge,healthyStatus));
                 break;
             case 'PearTree':
-                treeObject = new PearTree(age,height,matureAge,healthyStatus);
+                this._treeArr.push(new PearTree(age,height,matureAge,healthyStatus));
                 break;
         }
-        this._treeArr.push(treeObject)
     }
 
     create_tree(name) {
