@@ -1,6 +1,6 @@
-const MangoTree = require('./mango_tree.js');
-const AppleTree = require('./apple_tree.js');
-const PearTree = require('./pear_tree.js');
+const apple = require('./apple.js')
+const mango = require('./mango.js')
+const pear  = require('./pear.js' )
 
 class TreeGrove {
   constructor() {
@@ -78,29 +78,18 @@ class TreeGrove {
 
 }
 
-var grove = new TreeGrove()
-// input your trees data !
-// parameter ke-1: nama pohon
-// parameter ke-2: umur pohon ketika ditanam di taman tersebut
-// pamareter ke-3: tinggi pohon pertama kali ketika ditanam di taman tersebut
-// parameter ke-4: umur mature pohon tersebut
-// parameter ke-5: healthyStatus dari pohon tersebut ketika ditanam
-grove.inputTree(new MangoTree.MangoTree('MangoTree', 8, 1.8, 6, true))
-grove.inputTree(new MangoTree.MangoTree('MangoTree', 8, 2.4, 6, true))
-grove.inputTree(new AppleTree.AppleTree('AppleTree', 2, 1.4, 5, true))
-grove.inputTree(new PearTree.PearTree('PearTree', 1, 1.2, 6, true))
+let grove = new TreeGrove()
+// grove.inputTree(name, age, height, matureAge, healthy)
+grove.inputTree(new AppleTree.AppleTree('AppleTree', 2, 1.8, 5, true))  // apple
+grove.inputTree(new MangoTree.MangoTree('MangoTree', 8, 2.4, 6, true)) // mango
+grove.inputTree(new PearTree.PearTree('PearTree', 1, 1.2, 6, true))     // pear
 
-// next year
-grove.nextYear()
-
-// show trees age
-console.log(grove.show_ages);
-
-// show trees
-console.log(grove.show_trees);
-
-// show trees
-console.log(grove.show_mature_trees);
-
-// show trees
-console.log(grove.dead_trees);
+// driver
+// while grove is is_empty false
+// do {
+  grove.nextYear()
+  console.log(grove.show_ages);
+  console.log(grove.show_mature_trees);
+  console.log(grove.show_trees.length, 'Trees alive');
+  console.log(grove.dead_trees.length, 'Trees dead');
+// } while (grove._trees.length > 0)
