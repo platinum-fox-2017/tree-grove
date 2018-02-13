@@ -1,6 +1,6 @@
-// const MangoTree = require('./mango_tree.js');
-// const AppleTree = require('./apple_tree.js');
-// const PearTree = require('./pear_tree.js');
+const MangoTree = require('./mango_tree.js');
+const AppleTree = require('./apple_tree.js');
+const PearTree = require('./pear_tree.js');
 // dicommand karena belum selesai, baru release 1;
 
 class TreeGrove {
@@ -22,7 +22,7 @@ class TreeGrove {
   }
 
   nextYear(){
-    console.log('Living Trees Age Next Year');
+    console.log('Living Trees Age Next Year (2019)');
     let nextAges = [];
     for(let i=0; i<this._tree.length; i++){
       if((this._tree[i].firstAge + (this.currentYear - this.firstYear)) < (this._tree[i].matureAge + 3)){
@@ -34,7 +34,7 @@ class TreeGrove {
   }
 
   showAge(){
-    console.log('Living Trees and Age');
+    console.log('Living Trees and Age (2018)');
     let ages = [];
     for(let i=0; i<this._tree.length; i++){
       if((this._tree[i].firstAge + (this.currentYear - this.firstYear)) < (this._tree[i].matureAge + 3)){
@@ -46,7 +46,7 @@ class TreeGrove {
   }
 
   showTrees(){
-    console.log('Living Trees Now');
+    console.log('Living Trees Now (2018)');
     let live = [];
     for(let i=0; i<this._tree.length; i++){
       if((this._tree[i].firstAge + (this.currentYear - this.firstYear)) < (this._tree[i].matureAge + 3)){
@@ -57,7 +57,7 @@ class TreeGrove {
   }
 
   matureTrees(){
-    console.log('Mature Trees Now');
+    console.log('Mature Trees Now (2018)');
     let mature = [];
     for(let i=0; i<this._tree.length; i++){
       if((this._tree[i].firstAge + (this.currentYear - this.firstYear)) >= this._tree[i].matureAge){
@@ -68,7 +68,7 @@ class TreeGrove {
   }
 
   deadTrees(){
-    console.log('Dead Trees Now');
+    console.log('Dead Trees Now (2018)');
     let dead = [];
     for(let i=0; i<this._tree.length; i++){
       if((this._tree[i].firstAge + (this.currentYear - this.firstYear)) >= (this._tree[i].matureAge + 3)){
@@ -93,19 +93,19 @@ grove.inputTree("MangoTree", 5, 2.4, 12,true);
 grove.inputTree("AppleTree", 4, 1.2, 5,true);
 grove.inputTree("PearTree", 7, 2, 15,true);
 
-// console.log(grove);
+console.log(grove);
 
-// show trees age
+// // show trees age
 console.log(grove.showAge());
-
-// next year
+//
+// // next year
 console.log(grove.nextYear());
-
-// show trees
+//
+// // show trees
 console.log(grove.showTrees());
-
-// show trees
+//
+// // show trees
 console.log(grove.matureTrees());
-
-// show trees
+//
+// // show trees
 console.log(grove.deadTrees());
