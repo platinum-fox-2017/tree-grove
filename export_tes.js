@@ -5,11 +5,9 @@ const PearTree = require('./pear_tree.js');
 class TreeGrove {
     constructor(){
         this._treeList = []
-        
     }
 
     inputTree(name, age, height, mature, healthy){
-        
         if(name === "MangoTree"){
             this._treeList.push(new MangoTree(name, age, height, mature, healthy))
         }
@@ -22,8 +20,8 @@ class TreeGrove {
     }
     
     nextYear(){
-        for (var i = 0; i < this._treeList.length; i++) {
-            this._treeList[i].grow()
+        for (let i=0; i<this._treeList.length; i++) {
+            this.treeList[i]
           }
     }
 
@@ -36,30 +34,19 @@ class TreeGrove {
 
     // Method yang akan me-return semua nama pohon yang ada di taman
     showTrees(){
-        console.log('\nDi Taman terdapat beberapa pohon :')
         for(let i=0; i<this._treeList.length; i++){
-            console.log('Ada Pohon, ' +this._treeList[i]._name)
+          console.log('Ada Pohon, ' +this._treeList[i]._name)
         }
     }
 
-    // Method yang akan me-return semua nama pohon yang sedang berbuah
+    // Method yang akan me-return semua nama pohon yang sedang berubah
     matureTrees(){
-        console.log('\nPohon yang sedang berbuah :')
-        for (let i = 0; i < this._treeList.length; i++) {
-            if ((this._treeList[i]._age +  this._treeList[i]._height) <= this._treeList[i]._mature ) {
-              console.log(`${this._treeList[i]._name} sedang berbuah`);
-            }
-        }
+
     }
 
     // Method yang akan me-return nama-nama pohon yang mati di taman tersebut
     deadTrees(){
-        console.log('\nPohon yang telah mati :')
-        for (let i = 0; i < this._treeList.length; i++) {
-            if ((this._treeList[i]._age +  this._treeList[i]._height) >= this._treeList[i]._mature ) {
-              console.log(`${this._treeList[i]._name} telah mati`);
-            }
-        }
+
     }
 }
 
@@ -76,7 +63,7 @@ grove.inputTree("AppleTree", 4, 1.2, 5,true)
 grove.inputTree("PearTree", 7, 2, 15,true)
 
 // // next year
-grove.nextYear()
+// grove.nextYear()
 
 // // show trees age
 grove.showAge()
@@ -85,10 +72,17 @@ grove.showAge()
 grove.showTrees()
 
 // // show trees
-grove.matureTrees()
+// grove.mature_trees()
 
 // // show trees
-grove.deadTrees()
+// grove.dead_trees()
 
-
-// console.log(grove._treeList)
+// let mangoTree = new MangoTree("MangoTree", 3, 1.8, 7,true)
+// console.log('The tree is alive! :smile:')
+//   do {
+//     mangoTree.grow();
+//     mangoTree.produceFruits();
+//     mangoTree.harvest();
+//     console.log(`[Year ${mangoTree.age} Report] Height = ${mangoTree.height} | Fruits harvested = ${mangoTree.harvested}`)
+//    } while (mangoTree.healthyStatus != false)
+//    console.log('The tree has met its end! :sad:')
