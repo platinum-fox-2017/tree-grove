@@ -5,9 +5,8 @@ var Fruit = fileFruit.Fruit;
 var FruitTree = fileFruit.FruitTree;
 
 class AppleTree extends FruitTree{
-  constructor(){
-    super()
-    this.name='AppleTree'
+  constructor(name,umur,tinggi,maksUmur,status){
+    super(name,umur,tinggi,maksUmur,status)
   }
 }
 class Apple extends Fruit{
@@ -16,9 +15,6 @@ class Apple extends Fruit{
     this.color='red'
   }
 }
-
-let appleTree = new AppleTree(8,15,8)
-
 
 module.exports = {
   AppleTree

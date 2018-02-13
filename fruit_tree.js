@@ -6,13 +6,12 @@ class FruitTree {
 
   // Initialize a new MangoTree
 
-  constructor() {
-    this.umur=0
-    this.tinggi=0
-    this.status=true
-    this.maksUmur=0
-    this.name
-  //  this.stopTumbuh=stopTumbuh
+  constructor(name,umur,tinggi,maksUmur,status) {
+    this.name=name
+    this.umur=umur
+    this.tinggi=tinggi
+    this.maksUmur=maksUmur
+    this.status=status
   }
 
 
@@ -24,7 +23,7 @@ class Fruit {
     this.quality=quality
   }
 }
-let fruit_tree = new FruitTree(8,15,8)
+//let fruit_tree = new FruitTree(8,15,8)
 
    module.exports = {
      FruitTree,

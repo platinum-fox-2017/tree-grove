@@ -17,29 +17,14 @@ class TreeGrove {
   inputTree(name,umur,tinggi,maksUmur,status){
     if(name==="MangoTree"){
       var mangoArr=[]
-      var newMango = new mangoTree()
-       newMango.umur=umur
-       newMango.tinggi=tinggi
-       newMango.maksUmur=maksUmur
-       newMango.status=status
-       this.arrGrove.push(newMango)
+       this.arrGrove.push(new mangoTree(name,umur,tinggi,maksUmur,status))
 
     }
     else if(name==="AppleTree"){
-      var newApple = new appleTree()
-       newApple.umur=umur
-       newApple.tinggi=tinggi
-       newApple.maksUmur=maksUmur
-       newApple.status=status
-       this.arrGrove.push(newApple)
+       this.arrGrove.push(new appleTree(name,umur,tinggi,maksUmur,status))
     }
     else if(name==="PearTree"){
-      var newPear = new pearTree()
-       newPear.umur=umur
-       newPear.tinggi=tinggi
-       newPear.maksUmur=maksUmur
-       newPear.status=status
-       this.arrGrove.push(newPear)
+       this.arrGrove.push(new pearTree(name,umur,tinggi,maksUmur,status))
     }
   }
   nextYear(tambahUmur){
