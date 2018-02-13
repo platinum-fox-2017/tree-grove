@@ -1,6 +1,6 @@
-//const MangoTree = require('./mango_tree.js');
-//const AppleTree = require('./apple_tree.js');
-//const PearTree = require('./pear_tree.js');
+const MangoTree = require('./mango_tree.js');
+const AppleTree = require('./apple_tree.js');
+const PearTree = require('./pear_tree.js');
 
 class TreeGrove{
   constructor ()  {
@@ -10,42 +10,45 @@ class TreeGrove{
     return this._trees;  
   }
   
-  inputTree(namaPohon,umurPohon,tinggiPohon,umurMature,healthyStatus){
-    let tree = { nama: namaPohon, umur: umurPohon, tingg: tinggiPohon, umur_mature: umurMature, healthy_status: healthyStatus};
+  inputTree(tree){
     this._trees.push(tree);
+  }
+  nextYear(){
+    for(var i = 0; i < this.trees.length; i++){
+      this.trees[i].umur++;
+    }
   }
   showAges(){
     let umurTree = []  ;
-    for(var i = 0; i < this.trees.lengt; i++){
+    for(var i = 0; i < this.trees.length; i++){
       umurTree.push(this.trees[i].umur);
     }
-    console.log( umurTree);
+    console.log(`Trees Ages On Grove : ${umurTree.join(', ')}`);
   }
   showTrees(){
     let namaTree = []  ;
-    for(var i = 0; i < this.trees.lengt; i++){
+    for(var i = 0; i < this.trees.length; i++){
       namaTree.push(this.trees[i].nama);
     }
-    console.log(namaTree);
-    
+    console.log(`Trees On Grove : ${namaTree.join(', ')}`);
   }
   matureTrees(){
     let matureTree = []  ;
-    for(var i = 0; i < this.trees.lengt; i++){
-      if(this.tree[i].umur >= this.trees[i].umur_mature){
+    for(var i = 0; i < this.trees.length; i++){
+      if(this.trees[i].umur >= this.trees[i].umur_mature){
         matureTree.push(this.trees[i].nama);
       }
     }
-    console.log(matureTree);
+    console.log(`Mature Trees : ${matureTree.join(', ')}`);
   }
   deadTrees(){
     let deadTree = []  ;
-    for(var i = 0; i < this.trees.lengt; i++){
-      if(!this.tree[i].healthy_status ){
+    for(var i = 0; i < this.trees.length; i++){
+      if(!this.trees[i].healthy_status ){
         deadTree.push(this.trees[i].nama);
       }
     }
-    console.log(deadTree);
+    console.log(`Dead Trees : ${deadTree.join(', ')}`);
   }
   
 }
@@ -57,22 +60,22 @@ var grove = new TreeGrove()
 // pamareter ke-3: tinggi pohon pertama kali ketika ditanam di taman tersebut
 // parameter ke-4: umur mature pohon tersebut
 // parameter ke-5: healthyStatus dari pohon tersebut ketika ditanam
-grove.inputTree("MangoTree", 3, 1.8, 7,true)
-grove.inputTree("MangoTree", 5, 2.4, 12,true)
-grove.inputTree("AppleTree", 4, 1.2, 5,true)
-grove.inputTree("PearTree", 7, 2, 15,true)
+grove.inputTree(new MangoTree("MangoTree", 3, 1.8, 7,true))
+grove.inputTree(new MangoTree("MangoTree", 5, 2.4, 12,true))
+grove.inputTree(new AppleTree("AppleTree", 4, 1.2, 5,true))
+grove.inputTree(new PearTree("PearTree", 7, 2, 15,true))
 
 // next year
 grove.nextYear()
 
 // show trees age
-grove.showAge()
+grove.showAges()
 
 // show trees
 grove.showTrees()
 
 // show trees
-grove.mature_trees()
+grove.matureTrees()
 
 // show trees
-grove.dead_trees()
+grove.deadTrees()
