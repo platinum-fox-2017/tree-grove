@@ -1,8 +1,54 @@
-const MangoTree = require('./mango_tree.js');
-const AppleTree = require('./apple_tree.js');
-const PearTree = require('./pear_tree.js');
+//const MangoTree = require('./mango_tree.js');
+//const AppleTree = require('./apple_tree.js');
+//const PearTree = require('./pear_tree.js');
 
-class TreeGrove {}
+class TreeGrove{
+  constructor ()  {
+    this._trees = []  
+  }
+  get trees(){
+    return this._trees;  
+  }
+  
+  inputTree(namaPohon,umurPohon,tinggiPohon,umurMature,healthyStatus){
+    let tree = { nama: namaPohon, umur: umurPohon, tingg: tinggiPohon, umur_mature: umurMature, healthy_status: healthyStatus};
+    this._trees.push(tree);
+  }
+  showAges(){
+    let umurTree = []  ;
+    for(var i = 0; i < this.trees.lengt; i++){
+      umurTree.push(this.trees[i].umur);
+    }
+    console.log( umurTree);
+  }
+  showTrees(){
+    let namaTree = []  ;
+    for(var i = 0; i < this.trees.lengt; i++){
+      namaTree.push(this.trees[i].nama);
+    }
+    console.log(namaTree);
+    
+  }
+  matureTrees(){
+    let matureTree = []  ;
+    for(var i = 0; i < this.trees.lengt; i++){
+      if(this.tree[i].umur >= this.trees[i].umur_mature){
+        matureTree.push(this.trees[i].nama);
+      }
+    }
+    console.log(matureTree);
+  }
+  deadTrees(){
+    let deadTree = []  ;
+    for(var i = 0; i < this.trees.lengt; i++){
+      if(!this.tree[i].healthy_status ){
+        deadTree.push(this.trees[i].nama);
+      }
+    }
+    console.log(deadTree);
+  }
+  
+}
 
 var grove = new TreeGrove()
 // input your trees data !
