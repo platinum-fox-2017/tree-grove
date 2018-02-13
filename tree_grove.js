@@ -1,6 +1,7 @@
 // const MangoTree = require('./mango_tree.js');
 // const AppleTree = require('./apple_tree.js');
 // const PearTree = require('./pear_tree.js');
+// dicommand karena belum selesai, baru release 1;
 
 class TreeGrove {
   constructor(){
