@@ -64,6 +64,7 @@ grove.inputTree(new MangoTree("MangoTree", 3, 1.8, 7,true))
 grove.inputTree(new MangoTree("MangoTree", 5, 2.4, 12,true))
 grove.inputTree(new AppleTree("AppleTree", 4, 1.2, 5,true))
 grove.inputTree(new PearTree("PearTree", 7, 2, 15,true))
+grove.inputTree(new PearTree("PearTree", 7, 2, 15,false))
 
 // next year
 grove.nextYear()
