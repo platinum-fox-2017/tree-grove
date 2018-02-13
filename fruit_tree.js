@@ -21,7 +21,7 @@ class FruitTree {
         };
     }
 
-    set addAge(num){
+    set age(num){
         this._age += num;
         this.addHeight();
         this.updateHealthyStatus();
@@ -98,7 +98,7 @@ class FruitTree {
 
     // Grow the tree
     grow() {
-        this.addAge(1);
+        this.age = 1;
     }
 
 }

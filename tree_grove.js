@@ -75,7 +75,7 @@ class TreeGrove {
 
     nextYear() {
         for(let i = 0; i < this._treeArr.length; i++){
-            this._treeArr[i].addAge = 1;
+            this._treeArr[i].age = 1;
         }
     }
 }
