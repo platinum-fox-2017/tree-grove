@@ -41,6 +41,7 @@ class TreeGrove{
         matureTree.push(this.trees[i].nama);
       }
     }
+
     console.log(`Mature Trees : ${matureTree.join(', ')}`);
   }
   deadTrees(){
