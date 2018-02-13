@@ -38,7 +38,7 @@ class TreeGrove {
     show_ages() {
         // Memberi tahu umur setiap pohon
         for(let i = 0; i < this._treeArr.length; i++){
-            console.log(`${this._treeArr[i].constructor.name} => Usia: ${this._treeArr[i].age} tahun`);
+            console.log(`${this._treeArr[i].constructor.name} \t\t\t=> Usia: ${this._treeArr[i].age} tahun`);
         }
     }
 
@@ -48,7 +48,7 @@ class TreeGrove {
         for(let i = 0; i < this._treeArr.length; i++){
             tempArray.push(this._treeArr[i].constructor.name);
         }
-        return tempArray;
+        return `Pohon yang ada di taman\t\t: ${tempArray}`;
     }
 
     mature_trees() {
@@ -59,7 +59,7 @@ class TreeGrove {
                 tempArray.push(this._treeArr[i].constructor.name);
             }
         }
-        return tempArray;
+        return `Pohon yang sedang berbuah\t: ${tempArray}`;
     }
 
     dead_trees() {
@@ -70,7 +70,7 @@ class TreeGrove {
                 tempArray.push(this._treeArr[i].constructor.name);
             }
         }
-        return tempArray;
+        return `Pohon yang sudah mati\t\t: ${tempArray}\n`;
     }
 
     nextYear() {
