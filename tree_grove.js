@@ -57,7 +57,6 @@ class TreeGrove {
                 matureTrees.push(this._listOfTrees[i].name)
             }
         }
-        // console.log(matureTrees);
         return matureTrees;
     }
 
@@ -68,7 +67,6 @@ class TreeGrove {
                 deadTrees.push(this._listOfTrees[i].name)
             }
         }
-        // console.log(deadTrees);
         return deadTrees;
     }
 
