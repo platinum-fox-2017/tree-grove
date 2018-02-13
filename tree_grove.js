@@ -4,7 +4,7 @@ const PearTree = require('./pear_tree.js');
 
 class TreeGrove{
   constructor ()  {
-    this._trees = []  
+    this._trees = [];
   }
   get trees(){
     return this._trees;  
@@ -13,27 +13,29 @@ class TreeGrove{
   inputTree(tree){
     this._trees.push(tree);
   }
+
   nextYear(){
     for(var i = 0; i < this.trees.length; i++){
       this.trees[i].umur++;
     }
   }
+
   showAges(){
-    let umurTree = []  ;
+    let umurTree = [];
     for(var i = 0; i < this.trees.length; i++){
       umurTree.push(this.trees[i].umur);
     }
     console.log(`Trees Ages On Grove : ${umurTree.join(', ')}`);
   }
   showTrees(){
-    let namaTree = []  ;
+    let namaTree = [];
     for(var i = 0; i < this.trees.length; i++){
       namaTree.push(this.trees[i].nama);
     }
     console.log(`Trees On Grove : ${namaTree.join(', ')}`);
   }
   matureTrees(){
-    let matureTree = []  ;
+    let matureTree = [];
     for(var i = 0; i < this.trees.length; i++){
       if(this.trees[i].umur >= this.trees[i].umur_mature){
         matureTree.push(this.trees[i].nama);
@@ -42,7 +44,7 @@ class TreeGrove{
     console.log(`Mature Trees : ${matureTree.join(', ')}`);
   }
   deadTrees(){
-    let deadTree = []  ;
+    let deadTree = [];
     for(var i = 0; i < this.trees.length; i++){
       if(!this.trees[i].healthy_status ){
         deadTree.push(this.trees[i].nama);
